@@ -53,7 +53,7 @@ int main (int argc, char **argv) {
 
 			/* we have the program args and what is expected */
 			/* build the command for popen() */
-			snprintf(command, sizeof(command), "./%s %s", argv[1], input);
+			snprintf(command, sizeof(command), "./%s %s 2>&1", argv[1], input);
 		
 			if (debug){
 				/* show the built-up command string and test color output */ 

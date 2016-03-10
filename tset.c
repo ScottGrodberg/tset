@@ -44,6 +44,9 @@ int main (int argc, char **argv) {
 		if (*line && i) {
 			/* get a line, up to MAXLINELEN chars from fp.  done if NULL */
 			sscanf (line, "%[^|]|%[^|]|%[^\n]", input, expected, actual);
+				/* we have the program args and what is expected */
+				/* build the command for popen() */
+				snprintf(command, sizeof(command), "%s %s 2>&1", argv[1], input);
 			
 
 			if (debug){
